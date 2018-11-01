@@ -85,3 +85,27 @@ for i in range(int(input())):
         print(visited[x])
     else:
         print(-1)
+#best one
+def graph(node,a):
+    node=list(node)
+    node[a[1]],node[a[0]]=node[a[0]],node[a[1]]
+    return tuple(node)
+swap=((0,1),(1,2),(0,3),(1,4),(2,5),(3,4),(4,5),(3,6),(4,7),(5,8),(6,7),(7,8))
+prime={3,5,7,11,13,17}
+queue=[(1,2,3,4,5,6,7,8,9)]
+visited={y:0}
+while queue:
+    for a in [(a,b) for a,b in swap if node[a]+node[b] in prime]:
+        x=graph(node,a)
+        if x in visited:
+            continue
+        visited[x]=visited[node]+1
+        queue.append(x)
+for i in range(int(input())):
+    input()
+    x=tuple(map(int,(input()+input()+input()).split()))
+    if x in visited:
+        print(visited[x])
+    else:
+        print(-1)
+
