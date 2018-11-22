@@ -3,9 +3,10 @@ def spamclas(N, minx, maxx):
     a = 1
     al = 0
     for i in range(N):
-        neurons.append(list(map(int, input().split())))
+        neurons.append(list(map(int, input().split()))) 
         if neurons[i][0] % 2 == 0:
             a = 0
+    
     if a == 0:
         for i in range(N):
             al += neurons[i][1]

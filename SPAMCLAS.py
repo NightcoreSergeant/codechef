@@ -1,25 +1,36 @@
-def bla():
-    for _ in range(int(input())):
-        N,minX,maxX = map(int,input().split())
-        e,o=0,1
-        for _ in range(N):
-            w,b=map(int,input().split())
-            e=(w*e+b)%2
-            o=(w*o+b)%2
+for i in range(int(input())):
+    n,minx,maxx=map(int,input().split())
+    w=[]
+    a=[]
+    yes=no=0
+    wl=False
+    al=True
+    for i in range(n):
+        l1,l2=map(int,input().split())
+        w.append(l1)
+        a.append(l2)
+        if l1%2==0:
+            wl=True
+            if l2%2==1:
+                al=False
     
-        ans=0
-        r=maxX-minX+1
+#    if wl and al:
+#        if a[n-1]%2==0:
+#            no=maxx-minx+1
+#        else:
+#            yes=maxx-minx+1
+#    
+#    else:
+#        if (minx*w[0]+a[0])%2==0:
+#            no=(maxx-minx+1)//2+1
+#            yes=(maxx-minx+1)//2
+#        
+#        elif (minx*w[0]+a[0])%2==0:
+#            no=(maxx-minx+1)//2
+#            yes=(maxx-minx+1)//2+1
+#        
+#        else:# (maxx-minx+1)%2==0:
+#            yes=no=(maxx-minx+1)//2
     
-        k=r/2
-        if minX%2==0:
-            k+=1
-        l=r-k
-        
-        if e==0:
-            ans+=k
-        if o==0:
-            ans+=l
-        
-        return '{} {}'.format(ans, r-ans)
-
-print(bla())
+            
+    print(no,yes)
